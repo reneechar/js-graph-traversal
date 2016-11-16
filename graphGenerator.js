@@ -5,10 +5,13 @@ const Node = function(name, value) {
   this.value = value;
   this.neighbors = [];
 
-  this.addNeighbors = (arr) => {
-    arr.forEach(neighbor => {
-      this.neighbors.push(neighbor);
-    })
+  this.addNeighbors = function(arr) {
+    if (arr) {
+      arr.forEach(neighbor => {
+        this.neighbors.push(neighbor);
+      })
+    }
+    return this.neighbors;
   }
 }
 
